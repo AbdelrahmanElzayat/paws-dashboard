@@ -27,6 +27,7 @@ const Login = () => {
       navigate("/"); // Redirect to dashboard
     } catch (err) {
       toast.error("Invalid credentials");
+      setError("Invalid credentials");
     } finally {
       setLoading(false);
     }
