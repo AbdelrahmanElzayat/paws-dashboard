@@ -31,7 +31,7 @@ const SignUp = () => {
       );
       const token = response.data.token;
       Cookies.set("token", token, { expires: 7 }); // حفظ التوكن في الكوكيز لمدة 7 أيام
-      navigate("/"); // إعادة التوجيه إلى صفحة الـ Dashboard
+      navigate("/dashboard"); // إعادة التوجيه إلى صفحة الـ Dashboard
     } catch (err) {
       toast.error("Sign Up failed, please try again");
       setError("Sign Up failed, please try again");

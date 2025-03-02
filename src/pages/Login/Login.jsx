@@ -24,7 +24,7 @@ const Login = () => {
       );
       const token = response.data.access_token;
       Cookies.set("token", token, { expires: 7 }); // Set token in cookies for 7 days
-      navigate("/"); // Redirect to dashboard
+      navigate("/dashboard"); // Redirect to dashboard
     } catch (err) {
       toast.error("Invalid credentials");
       setError("Invalid credentials");

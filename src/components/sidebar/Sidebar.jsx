@@ -10,11 +10,11 @@ const Sidebar = () => {
     Cookies.remove("token");
 
     // إعادة التوجيه إلى صفحة اللوجين
-    navigate("/login");
+    navigate("/dashboard/login");
   };
   return (
     <aside className="w-16 h-full bg-blue-600 text-white flex flex-col items-center py-4">
-      <Link to="/" className="mb-4 flex flex-col items-center">
+      <Link to="/dashboard" className="mb-4 flex flex-col items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

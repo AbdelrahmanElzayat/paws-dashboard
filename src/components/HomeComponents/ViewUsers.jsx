@@ -17,7 +17,7 @@ const ViewUsers = () => {
 
         if (!token) {
           toast.error("No token found in cookies");
-          return <Navigate to="/login" />;
+          return <Navigate to="/dashboard/login" />;
         }
 
         // إرسال الطلب باستخدام التوكن في الهيدر
@@ -61,10 +61,26 @@ const ViewUsers = () => {
       selector: (row) => row.position,
       sortable: true,
     },
+    {
+      name: "Programs",
+      selector: (row) => row.programs,
+      sortable: true,
+      cell: (row) => (
+        <div style={{ whiteSpace: "normal", wordWrap: "break-word" }}>
+          {row.programs?.map((item, index) => (
+            <span key={index}>
+              {index+1 + "- " + item}
+              <br />
+              <br />
+            </span>
+          ))}
+        </div>
+      ),
+    },
   ];
 
   return (
-    <div className="p-4">
+    <div className="p-4 max-w-[calc(100vw-100px)]">
       <h2 className="text-xl font-semibold mb-4">View Participants</h2>
       {loading ? (
         <p>Loading...</p>
@@ -76,6 +92,7 @@ const ViewUsers = () => {
           pagination
           highlightOnHover
           striped
+          // style={{width:"100%",overflowX:"auto"}}
         />
       )}
     </div>

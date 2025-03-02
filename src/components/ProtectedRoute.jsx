@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = Cookies.get("token");
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/dashboard/login" replace />;
   }
   return children;
 };

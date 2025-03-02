@@ -12,7 +12,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/dashboard",
       element: <MainLayout />,
       children: [
         {
@@ -32,11 +32,11 @@ function App() {
       ],
     },
     {
-      path: "/",
+      path: "/dashboard",
       element: <AuthLayout />,
       children: [
         {
-          path: "/login",
+          path: "/dashboard/login",
           element: (
             <Suspense fallback={<LoadingPage />}>
               <Login />
@@ -44,7 +44,7 @@ function App() {
           ),
         },
         {
-          path: "/register",
+          path: "/dashboard/register",
           element: (
             <Suspense fallback={<LoadingPage />}>
               <SignUp />
